@@ -16,6 +16,7 @@ const Home = () => (
     <Helmet>
       <title>Red Inmobiliaria Colaborativa | Vende tu propiedad rápido en Chile</title>
       <meta name="description" content="Únete a la primera red colaborativa de gestión inmobiliaria. Comisiones compartidas, tecnología Big Data y venta acelerada de propiedades." />
+      <meta name="google-site-verification" content="G-Hx1Q-P5ZvIkuLQgRgO-u4hB1Aqha2WPfLnOSgxKF8" />
     </Helmet>
     {/* Hero Section */}
     <div className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-20 text-center">
