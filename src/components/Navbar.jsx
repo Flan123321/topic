@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import { User, LogIn } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
+    const { user } = useAuth();
 
     // Color change on scroll
     useEffect(() => {
@@ -25,7 +28,6 @@ const Navbar = () => {
     const navLinks = [
         { name: 'Inicio', path: '/' },
         { name: 'Modelo', path: '/gestion-inmobiliaria-colaborativa' },
-        // Simplified dropdown logic for mobile ease - flat list for now or specific key article
         { name: 'Legalidad', path: '/blog/legalidad-comisiones-chile' },
         { name: 'Ventas', path: '/blog/guia-venta-terrenos' },
     ];
@@ -55,8 +57,8 @@ const Navbar = () => {
                                     key={link.name}
                                     to={link.path}
                                     className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${location.pathname === link.path
-                                            ? 'text-indigo-600 bg-indigo-50'
-                                            : 'text-slate-600 hover:text-indigo-600 hover:bg-slate-50'
+                                        ? 'text-indigo-600 bg-indigo-50'
+                                        : 'text-slate-600 hover:text-indigo-600 hover:bg-slate-50'
                                         }`}
                                 >
                                     {link.name}
@@ -65,8 +67,26 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* CTA Button */}
-                    <div className="hidden md:block">
+                    {/* Desktop Actions */}
+                    <div className="hidden md:flex items-center gap-4">
+                        {user ? (
+                            <Link
+                                to="/mi-cuenta"
+                                className="flex items-center gap-2 text-slate-600 hover:text-indigo-600 font-medium transition-colors"
+                            >
+                                <User className="w-5 h-5" />
+                                <span>Mi Cuenta</span>
+                            </Link>
+                        ) : (
+                            <Link
+                                to="/login"
+                                className="flex items-center gap-2 text-slate-600 hover:text-indigo-600 font-medium transition-colors"
+                            >
+                                <LogIn className="w-5 h-5" />
+                                <span>Ingresar</span>
+                            </Link>
+                        )}
+
                         <Link
                             to="/gestion-inmobiliaria-colaborativa"
                             className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
@@ -100,7 +120,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`} id="mobile-menu">
+            <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`} id="mobile-menu">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md shadow-lg border-t border-slate-100">
                     {navLinks.map((link) => (
                         <Link
@@ -108,14 +128,35 @@ const Navbar = () => {
                             to={link.path}
                             onClick={() => setIsOpen(false)}
                             className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === link.path
-                                    ? 'text-indigo-600 bg-indigo-50'
-                                    : 'text-slate-600 hover:text-indigo-600 hover:bg-slate-50'
+                                ? 'text-indigo-600 bg-indigo-50'
+                                : 'text-slate-600 hover:text-indigo-600 hover:bg-slate-50'
                                 }`}
                         >
                             {link.name}
                         </Link>
                     ))}
-                    <div className="pt-4 pb-2 border-t border-slate-100 mt-2">
+
+                    <div className="border-t border-slate-100 my-2 pt-2">
+                        {user ? (
+                            <Link
+                                to="/mi-cuenta"
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50"
+                            >
+                                <User className="w-5 h-5" /> Mi Cuenta
+                            </Link>
+                        ) : (
+                            <Link
+                                to="/login"
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50"
+                            >
+                                <LogIn className="w-5 h-5" /> Ingresar
+                            </Link>
+                        )}
+                    </div>
+
+                    <div className="pt-2 pb-2">
                         <Link
                             to="/gestion-inmobiliaria-colaborativa"
                             onClick={() => setIsOpen(false)}
