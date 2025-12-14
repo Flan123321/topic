@@ -27,7 +27,7 @@ export default defineConfig({
   plugins: [
     react(),
     Sitemap({
-      hostname: 'https://tuweb.cl', // Cambiar por dominio real en producción
+      hostname: 'https://topic-3jc2.vercel.app',
       dynamicRoutes,
       generateRobotsTxt: false
     }),

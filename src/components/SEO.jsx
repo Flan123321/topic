@@ -13,7 +13,7 @@ export const SEO = ({ title, description, href, name, type }) => {
             <meta property="og:description" content={description} />
 
             {/* Canonical: OBLIGATORIO para Topic Clusters */}
-            <link rel="canonical" href={`https://tuweb.cl${href}`} />
+            <link rel="canonical" href={`https://topic-3jc2.vercel.app${href}`} />
         </Helmet>
     );
 };
