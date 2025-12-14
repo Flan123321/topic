@@ -11,8 +11,11 @@ import IngresosPage from './pages/IngresosPage';
 import MarketingPage from './pages/MarketingPage';
 import GuiaVentasPage from './pages/GuiaVentasPage';
 
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 const Home = () => (
-  <div className="min-h-screen bg-slate-50 font-sans flex flex-col">
+  <div className="font-sans flex flex-col">
     <Helmet>
       <title>Red Inmobiliaria Colaborativa | Vende tu propiedad rápido en Chile</title>
       <meta name="description" content="Únete a la primera red colaborativa de gestión inmobiliaria. Comisiones compartidas, tecnología Big Data y venta acelerada de propiedades." />
@@ -70,38 +73,44 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
+        <div className="flex flex-col min-h-screen bg-slate-50">
+          <Navbar />
+          <div className="flex-grow pt-20">
+            <Routes>
+              <Route path="/" element={<Home />} />
 
-          {/* Pillar Page */}
-          <Route path="/gestion-inmobiliaria-colaborativa" element={<PillarPage />} />
+              {/* Pillar Page */}
+              <Route path="/gestion-inmobiliaria-colaborativa" element={<PillarPage />} />
 
-          {/* Cluster A: Legitimidad */}
-          <Route path="/blog/legalidad-comisiones-chile" element={<LegalidadPage />} />
-          <Route path="/blog/corredor-vs-red" element={<ModeloPage />} />
-          <Route path="/blog/ingresos-extra" element={<IngresosPage />} />
+              {/* Cluster A: Legitimidad */}
+              <Route path="/blog/legalidad-comisiones-chile" element={<LegalidadPage />} />
+              <Route path="/blog/corredor-vs-red" element={<ModeloPage />} />
+              <Route path="/blog/ingresos-extra" element={<IngresosPage />} />
 
-          {/* Cluster B: Cliente Final */}
-          <Route path="/blog/peligro-exclusividad-inmobiliaria" element={<ExclusividadPage />} />
-          <Route path="/blog/marketing-impacto" element={<MarketingPage />} />
-          <Route path="/blog/guia-venta-terrenos" element={<GuiaVentasPage />} />
+              {/* Cluster B: Cliente Final */}
+              <Route path="/blog/peligro-exclusividad-inmobiliaria" element={<ExclusividadPage />} />
+              <Route path="/blog/marketing-impacto" element={<MarketingPage />} />
+              <Route path="/blog/guia-venta-terrenos" element={<GuiaVentasPage />} />
 
-          {/* Cluster C: Tecnología */}
-          <Route path="/blog/tecnologia-venta-propiedades" element={<TechnologyPage />} />
-          <Route path="/blog/transparencia-gestion" element={<TransparenciaPage />} />
+              {/* Cluster C: Tecnología */}
+              <Route path="/blog/tecnologia-venta-propiedades" element={<TechnologyPage />} />
+              <Route path="/blog/transparencia-gestion" element={<TransparenciaPage />} />
 
-          {/* 404 Route */}
-          <Route path="*" element={
-            <div className="text-center py-20 font-sans">
-              <h1 className="text-6xl font-extrabold text-slate-900 mb-4">404</h1>
-              <p className="text-xl text-slate-600 mb-8">Página no encontrada</p>
-              <Link to="/" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white transition-all bg-indigo-600 rounded-lg hover:bg-indigo-700">
-                Volver al Inicio
-              </Link>
-            </div>
-          } />
+              {/* 404 Route */}
+              <Route path="*" element={
+                <div className="text-center py-20 font-sans">
+                  <h1 className="text-6xl font-extrabold text-slate-900 mb-4">404</h1>
+                  <p className="text-xl text-slate-600 mb-8">Página no encontrada</p>
+                  <Link to="/" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white transition-all bg-indigo-600 rounded-lg hover:bg-indigo-700">
+                    Volver al Inicio
+                  </Link>
+                </div>
+              } />
 
-        </Routes>
+            </Routes>
+          </div>
+          <Footer />
+        </div>
       </Router>
     </HelmetProvider>
   );
