@@ -21,30 +21,13 @@ const RegisterClientPage = () => {
 
         try {
             // 1. Sign up/Create Auth User
+            // The Database Trigger 'handle_new_user' will automatically insert 
+            // the user into the public.clients table.
             const { data, error: authError } = await signUp(email, password, {
                 full_name: fullName,
             });
 
             if (authError) throw authError;
-
-            if (data?.user) {
-                // 2. Add to public 'clients' table
-                const { error: dbError } = await supabase
-                    .from('clients')
-                    .insert([
-                        {
-                            id: data.user.id, // Link to auth user
-                            email: email,
-                            full_name: fullName,
-                        }
-                    ]);
-
-                if (dbError) {
-                    console.error("Database Insert Error:", dbError);
-                    // Optionally handle this, but auth user is already created.
-                    // For now we continue.
-                }
-            }
 
             navigate('/mi-cuenta'); // Redirect to dashboard
         } catch (err) {
