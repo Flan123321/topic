@@ -16,6 +16,8 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/auth/LoginPage';
 import RegisterClientPage from './pages/auth/RegisterClientPage';
 import DashboardPage from './pages/auth/DashboardPage';
+import SellPropertyPage from './pages/forms/SellPropertyPage';
+import JoinNetworkPage from './pages/forms/JoinNetworkPage';
 import { AuthProvider } from './context/AuthContext';
 
 import Navbar from './components/Navbar';
@@ -37,6 +39,10 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/registro-cliente" element={<RegisterClientPage />} />
                 <Route path="/mi-cuenta" element={<DashboardPage />} />
+
+                {/* Lead Forms */}
+                <Route path="/vender" element={<SellPropertyPage />} />
+                <Route path="/unirme" element={<JoinNetworkPage />} />
 
                 {/* Pillar Page */}
                 <Route path="/gestion-inmobiliaria-colaborativa" element={<PillarPage />} />

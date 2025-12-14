@@ -88,7 +88,7 @@ const Navbar = () => {
                         )}
 
                         <Link
-                            to="/gestion-inmobiliaria-colaborativa"
+                            to="/unirme"
                             className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                         >
                             Unirme a la Red
@@ -158,7 +158,7 @@ const Navbar = () => {
 
                     <div className="pt-2 pb-2">
                         <Link
-                            to="/gestion-inmobiliaria-colaborativa"
+                            to="/unirme"
                             onClick={() => setIsOpen(false)}
                             className="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-lg font-bold text-base transition-colors shadow-sm"
                         >
