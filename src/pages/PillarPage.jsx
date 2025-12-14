@@ -1,134 +1,193 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { motion } from 'framer-motion';
+import { CheckCircle2, Users, Coins, Scale, ShieldCheck, TrendingUp, ChevronRight } from 'lucide-react';
 
 const PillarPage = () => {
     return (
         <>
             <SEO
-                title="Gestión Inmobiliaria Colaborativa: El Nuevo Modelo"
-                description="Descubre cómo la Gestión Inmobiliaria Colaborativa acelera la venta de propiedades en Chile mediante una red de colaboradores y comisiones compartidas."
+                title="Gestión Inmobiliaria Colaborativa: El Modelo 2024"
+                description="Descubre cómo la red colaborativa acelera la venta de propiedades en Chile. Más velocidad, transparencia y comisiones compartidas."
                 href="/gestion-inmobiliaria-colaborativa"
                 type="article"
             />
-            <div className="pillar-page-container" style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', fontFamily: 'system-ui, sans-serif', lineHeight: '1.6' }}>
 
-                <header style={{ marginBottom: '40px', textAlign: 'center' }}>
-                    <h1 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#1a202c', marginBottom: '1rem' }}>
-                        Gestión Inmobiliaria Colaborativa: El Nuevo Modelo para Vender y Generar Ingresos en Bienes Raíces
-                    </h1>
-                    <p style={{ fontSize: '1.2rem', color: '#4a5568' }}>
-                        Olvida el corretaje tradicional. Descubre el poder de una red conectada.
-                    </p>
+            <div className="bg-slate-50 min-h-screen font-sansselection:bg-indigo-500 selection:text-white pb-20">
+
+                {/* Hero Section */}
+                <header className="relative bg-white pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-50 via-slate-50 to-white opacity-70"></div>
+
+                    <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <span className="inline-block py-1 px-3 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-6">
+                                El Futuro del Corretaje
+                            </span>
+                            <h1 className="font-display text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                                Gestión Inmobiliaria <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Colaborativa</span>
+                            </h1>
+                            <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+                                Olvida el modelo de "vendedor solitario". Descubre el poder de una red conectada que multiplica por 10x la velocidad de venta.
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.2, duration: 0.5 }}
+                            className="flex justify-center gap-4 flex-wrap"
+                        >
+                            <button className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow-lg hover:shadow-indigo-500/30 transition-all transform hover:-translate-y-1">
+                                Vender mi Propiedad
+                            </button>
+                            <button className="px-8 py-3 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold rounded-lg transition-all">
+                                Unirme al Equipo
+                            </button>
+                        </motion.div>
+                    </div>
                 </header>
 
-                <section style={{ backgroundColor: '#f7fafc', padding: '30px', borderRadius: '12px', marginBottom: '40px', border: '1px solid #e2e8f0' }}>
-                    <h2 style={{ color: '#2d3748', marginTop: 0 }}>¿Qué vas a encontrar aquí?</h2>
-                    <p>Si eres dueño de una propiedad y te urge vender, o si buscas generar ingresos serios en el mundo inmobiliario sin ser un "vendedor puerta a puerta", este artículo cambiará tu perspectiva.</p>
-                    <div style={{ display: 'flex', gap: '20px', marginTop: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <button style={{ backgroundColor: '#48bb78', color: 'white', padding: '15px 30px', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '1rem', fontWeight: 'bold' }}>
-                            Quiero Vender mi Propiedad
-                        </button>
-                        <button style={{ backgroundColor: '#4299e1', color: 'white', padding: '15px 30px', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '1rem', fontWeight: 'bold' }}>
-                            Quiero Unirme al Equipo
-                        </button>
+                <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+
+                    {/* The Problem vs Solution Card */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16 border border-slate-100"
+                    >
+                        <div className="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h2 className="font-display text-2xl font-bold text-slate-900 mb-4">
+                                    El Viejo Modelo (Lento)
+                                </h2>
+                                <p className="text-slate-600 mb-6">
+                                    Entregas tu propiedad a un solo corredor. Él pone un letrero, publica en Yapo y espera sentado. Si tienes suerte, alguien llama en 6 meses.
+                                </p>
+                                <ul className="space-y-3">
+                                    <li className="flex items-center text-slate-500 text-sm">
+                                        <span className="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center mr-3 text-xs">✕</span>
+                                        Exclusividad que amarra
+                                    </li>
+                                    <li className="flex items-center text-slate-500 text-sm">
+                                        <span className="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center mr-3 text-xs">✕</span>
+                                        Alcance limitado
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="bg-indigo-50 rounded-2xl p-8 relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-100 rounded-full mix-blend-multiply filter blur-2xl opacity-50"></div>
+                                <h2 className="font-display text-2xl font-bold text-indigo-900 mb-4 relative z-10">
+                                    Nuestro Modelo (Red)
+                                </h2>
+                                <p className="text-indigo-800 mb-6 relative z-10">
+                                    Tu propiedad entra a un ecosistema de +500 agentes conectados. Todos compiten por venderla porque <strong>compartimos la comisión</strong>.
+                                </p>
+                                <ul className="space-y-3 relative z-10">
+                                    <li className="flex items-center text-indigo-700 text-sm font-medium">
+                                        <CheckCircle2 className="w-5 h-5 mr-3 text-indigo-500" />
+                                        Velocidad x10
+                                    </li>
+                                    <li className="flex items-center text-indigo-700 text-sm font-medium">
+                                        <CheckCircle2 className="w-5 h-5 mr-3 text-indigo-500" />
+                                        Incentivo real de venta
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Benefits Section */}
+                    <div className="grid md:grid-cols-2 gap-8 mb-20">
+                        {/* Owner Benefits */}
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-100 transition-colors">
+                            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-6">
+                                <TrendingUp className="w-6 h-6" />
+                            </div>
+                            <h3 className="font-display text-xl font-bold text-slate-900 mb-4">Para Propietarios</h3>
+                            <ul className="space-y-4">
+                                <li className="flex items-start">
+                                    <CheckCircle2 className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
+                                    <span className="text-slate-600 text-sm"><strong>Masificación:</strong> No dependes de un solo aviso. Tu casa circula en grupos de inversión y redes privadas.</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <CheckCircle2 className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
+                                    <span className="text-slate-600 text-sm"><strong>Filtro Real:</strong> Solo llevamos visitas con crédito pre-aprobado. Cero turismo inmobiliario.</span>
+                                </li>
+                            </ul>
+                            <Link to="/blog/peligro-exclusividad-inmobiliaria" className="inline-flex items-center mt-6 text-indigo-600 font-semibold text-sm hover:underline">
+                                Por qué no firmar exclusividad <ChevronRight className="w-4 h-4" />
+                            </Link>
+                        </div>
+
+                        {/* Affiliate Benefits */}
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-100 transition-colors">
+                            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-6">
+                                <Users className="w-6 h-6" />
+                            </div>
+                            <h3 className="font-display text-xl font-bold text-slate-900 mb-4">Para Colaboradores</h3>
+                            <ul className="space-y-4">
+                                <li className="flex items-start">
+                                    <CheckCircle2 className="w-5 h-5 text-blue-500 mr-3 mt-0.5" />
+                                    <span className="text-slate-600 text-sm"><strong>Ingresos en UF:</strong> Gana comisiones compartidas (canje) o por referir propiedades.</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <CheckCircle2 className="w-5 h-5 text-blue-500 mr-3 mt-0.5" />
+                                    <span className="text-slate-600 text-sm"><strong>Sin Burocracia:</strong> Nosotros ponemos la marca, la tecnología y el área legal. Tú traes el negocio.</span>
+                                </li>
+                            </ul>
+                            <Link to="/blog/ingresos-extra" className="inline-flex items-center mt-6 text-indigo-600 font-semibold text-sm hover:underline">
+                                Ver modelo de comisiones <ChevronRight className="w-4 h-4" />
+                            </Link>
+                        </div>
                     </div>
-                </section>
 
-                <article>
-                    <h2 style={{ fontSize: '2rem', color: '#2c5282', borderBottom: '2px solid #ed8936', paddingBottom: '10px' }}>
-                        ¿Qué es la Gestión Inmobiliaria Colaborativa?
-                    </h2>
-                    <p>
-                        En Chile, el modelo tradicional de corretaje ha funcionado igual durante décadas: entregas tu casa a un corredor, él pone un letrero, publica en un par de portales (Yapo, Portalinmobiliario) y se sienta a esperar. Si tienes suerte, alguien llama.
-                    </p>
-                    <p>
-                        La <strong>Gestión Inmobiliaria Colaborativa</strong> rompe este esquema pasivo. No es una estafa piramidal ni un "sistema mágico". Es una red estructurada de profesionales y colaboradores independientes que trabajan bajo un mismo objetivo: <strong>cerrar la venta.</strong>
-                    </p>
-                    <p>
-                        Imagina que en lugar de tener a <em>un</em> corredor intentando vender tu terreno en el sur o tu departamento en Santiago, tienes a una red de 50, 100 o más personas ofreciéndolo activamente a sus propias redes de contacto. La comisión no se la queda uno solo; se comparte. Esto incentiva que todos <em>quieran</em> vender tu propiedad, porque todos ganan.
-                    </p>
-
-                    <h2 style={{ fontSize: '2rem', color: '#2c5282', marginTop: '40px', borderBottom: '2px solid #ed8936', paddingBottom: '10px' }}>
-                        Ventajas para el Propietario: ¿Por qué vender con nosotros?
-                    </h2>
-                    <p>
-                        Como dueño, tu mayor enemigo es el tiempo. Una propiedad estancada en el mercado se "quema"; los compradores asumen que tiene algo malo.
-                    </p>
-                    <ul style={{ listStyleType: 'none', padding: 0 }}>
-                        <li style={{ marginBottom: '15px', paddingLeft: '20px', borderLeft: '4px solid #48bb78' }}>
-                            <strong>Velocidad x10:</strong> Al masificar la fuerza de venta, llegamos al comprador ideal mucho antes. No dependemos de que alguien "encuentre" tu aviso; nosotros salimos a buscar al comprador.
-                        </li>
-                        <li style={{ marginBottom: '15px', paddingLeft: '20px', borderLeft: '4px solid #48bb78' }}>
-                            <strong>Mayor Exposición Real:</strong> Más allá de los portales clásicos, tu propiedad circula en grupos de inversión, redes de WhatsApp de corredores y campañas de marketing digital segmentadas.
-                        </li>
-                        <li style={{ marginBottom: '15px', paddingLeft: '20px', borderLeft: '4px solid #48bb78' }}>
-                            <strong>Gestión Integral y Transparente:</strong> Nos encargamos de filtrar a los curiosos de los compradores reales. Te ahorramos el desgaste emocional de mostrar tu casa a quien no tiene el crédito pre-aprobado.
-                        </li>
-                    </ul>
-                    <p>
-                        <em>¿Te preocupa la exclusividad?</em> <Link to="/blog/peligro-exclusividad-inmobiliaria" style={{ color: '#3182ce' }}>Lee nuestro artículo sobre por qué la exclusividad con un solo corredor puede frenar tu venta.</Link>
-                    </p>
-
-                    <h2 style={{ fontSize: '2rem', color: '#2c5282', marginTop: '40px', borderBottom: '2px solid #ed8936', paddingBottom: '10px' }}>
-                        Ventajas para el Afiliado: Ingresos Reales y Éticos
-                    </h2>
-                    <p>
-                        Aquí es donde entra la innovación. Quizás has escuchado sobre el corretaje, pero te frena la idea de hacer cursos eternos o la burocracia. O quizás ya eres corredor y te sientes solo contra el mercado.
-                    </p>
-                    <h3>El Poder de Compartir Comisión</h3>
-                    <p>
-                        En nuestro modelo, democratizamos el acceso al negocio inmobiliario. Si tú nos traes un comprador (o una propiedad), eres parte del negocio.
-                    </p>
-                    <p>
-                        <strong>¿Es serio este ingreso?</strong> Absolutamente. Hablamos de comisiones en UF. Si una propiedad de 5.000 UF se vende, la comisión total (usualmente 2% + IVA por lado) es significativa. Al ser un colaborador, tú recibes una parte justa y acordada previamente por contrato, solo por conectar las puntas.
-                    </p>
-                    <p>
-                        Para profundidad en esto, revisa <Link to="/blog/ingresos-extra" style={{ color: '#3182ce' }}>cómo generar ingresos extra en el sector inmobiliario</Link> y <Link to="/blog/corredor-vs-red" style={{ color: '#3182ce' }}>diferencias entre corredor tradicional y red de colaboradores</Link>.
-                    </p>
-
-                    <h2 style={{ fontSize: '2rem', color: '#2c5282', marginTop: '40px', borderBottom: '2px solid #ed8936', paddingBottom: '10px' }}>
-                        Marco Legal y Confianza: Hablemos Claro
-                    </h2>
-                    <p>
-                        Sabemos que el rubro inmobiliario en Chile a veces sufre de informalidad. Por eso, nuestra base es la legalidad absoluta.
-                    </p>
-                    <p>
-                        No trabajamos "de palabra". Todo se respalda mediante un <strong>Mandato Civil</strong> y contratos de prestación de servicios honorarios. Esto protege tanto al dueño de la propiedad (asegurando que quien vende está autorizado) como al colaborador (asegurando el pago de su gestión).
-                    </p>
-                    <p>
-                        ¿Tienes dudas sobre la normativa? Es normal. Hemos preparado un análisis exhaustivo: <Link to="/blog/legalidad-comisiones-chile" style={{ color: '#3182ce' }}>¿Es legal compartir comisiones inmobiliarias en Chile?</Link>. Allí explicamos cómo operamos bajo el Código Civil y la normativa vigente, diferenciándonos del ejercicio ilegal de la profesión.
-                    </p>
-                    <p>
-                        Además, toda la documentación de cierre pasa por Notaría y se inscribe debidamente en el <strong>Conservador de Bienes Raíces</strong> respectivo. Cero riesgos.
-                    </p>
-
-                    <h2 style={{ fontSize: '2rem', color: '#2c5282', marginTop: '40px', borderBottom: '2px solid #ed8936', paddingBottom: '10px' }}>
-                        Tecnología al Servicio de la Venta
-                    </h2>
-                    <p>
-                        Finalmente, no somos solo "vendedores". Somos una empresa <strong>PropTech</strong>. Usamos datos, no intuición. Analizamos el mercado, tasamos con herramientas digitales y monitoreamos cada lead.
-                    </p>
-                    <p>
-                        Descubre nuestra visión futurista en <Link to="/blog/tecnologia-venta-propiedades" style={{ color: '#3182ce' }}>Digitalización de la venta: Uso de Data y RRSS</Link>.
-                    </p>
-
-                </article>
-
-                <section style={{ backgroundColor: '#2d3748', color: 'white', padding: '40px', borderRadius: '12px', marginTop: '60px', textAlign: 'center' }}>
-                    <h2 style={{ color: 'white', borderBottom: 'none' }}>¿Listo para el siguiente paso?</h2>
-                    <p style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                        Ya sea que tengas una propiedad paralizada o quieras entrar al negocio inmobiliario más dinámico de Chile.
-                    </p>
-                    <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <button style={{ backgroundColor: '#48bb78', color: 'white', padding: '15px 30px', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '1.2rem', fontWeight: 'bold' }}>
-                            Vender mi Propiedad Ahora
-                        </button>
-                        <button style={{ backgroundColor: '#4299e1', color: 'white', padding: '15px 30px', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '1.2rem', fontWeight: 'bold' }}>
-                            Unirme a la Red de Socios
-                        </button>
+                    {/* Trust / Legal Block */}
+                    <div className="bg-slate-900 rounded-3xl p-10 md:p-16 text-center text-white mb-20 relative overflow-hidden">
+                        <div className="relative z-10">
+                            <Scale className="w-12 h-12 text-indigo-400 mx-auto mb-6" />
+                            <h2 className="font-display text-3xl font-bold mb-6">Marco Legal Blindado</h2>
+                            <p className="text-slate-300 max-w-2xl mx-auto mb-10 text-lg">
+                                No trabajamos "de palabra". Todo se respalda con Mandatos Civiles y revisión de títulos. Protegemos tu patrimonio y aseguramos el pago de comisiones.
+                            </p>
+                            <div className="flex flex-col sm:flex-row justify-center gap-6">
+                                <div className="flex items-center justify-center gap-2 text-sm text-slate-400">
+                                    <ShieldCheck className="w-5 h-5 text-green-400" />
+                                    <span>Inscripción en Conservador</span>
+                                </div>
+                                <div className="flex items-center justify-center gap-2 text-sm text-slate-400">
+                                    <ShieldCheck className="w-5 h-5 text-green-400" />
+                                    <span>Contratos Notariales</span>
+                                </div>
+                            </div>
+                            <div className="mt-10">
+                                <Link to="/blog/legalidad-comisiones-chile" className="text-white border-b border-indigo-500 hover:text-indigo-400 transition-colors pb-1">
+                                    Leer análisis legal completo
+                                </Link>
+                            </div>
+                        </div>
                     </div>
-                </section>
+
+                    {/* Final CTA */}
+                    <div className="text-center">
+                        <h3 className="font-display text-2xl font-bold text-slate-900 mb-6">
+                            ¿Listo para operar con tecnología y velocidad?
+                        </h3>
+                        <div className="inline-flex rounded-md shadow-sm">
+                            <a href="#" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                                Contactar Ahora
+                            </a>
+                        </div>
+                    </div>
+
+                </main>
             </div>
         </>
     );
