@@ -44,12 +44,12 @@ const PillarPage = () => {
                             transition={{ delay: 0.2, duration: 0.5 }}
                             className="flex justify-center gap-4 flex-wrap"
                         >
-                            <button className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow-lg hover:shadow-indigo-500/30 transition-all transform hover:-translate-y-1">
+                            <Link to="/vender" className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow-lg hover:shadow-indigo-500/30 transition-all transform hover:-translate-y-1">
                                 Vender mi Propiedad
-                            </button>
-                            <button className="px-8 py-3 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold rounded-lg transition-all">
+                            </Link>
+                            <Link to="/unirme" className="px-8 py-3 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold rounded-lg transition-all">
                                 Unirme al Equipo
-                            </button>
+                            </Link>
                         </motion.div>
                     </div>
                 </header>
@@ -181,9 +181,9 @@ const PillarPage = () => {
                             ¿Listo para operar con tecnología y velocidad?
                         </h3>
                         <div className="inline-flex rounded-md shadow-sm">
-                            <a href="#" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                            <Link to="/unirme" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
                                 Contactar Ahora
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
